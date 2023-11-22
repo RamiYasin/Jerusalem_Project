@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
+import { PostActionBar } from "./PostActionBar";
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -15,6 +16,11 @@ export function PostItem({ source }) {
                 <Image source={source} style={styles.postImage}>
 
                 </Image>
+            </View>
+            <View>
+                <PostActionBar>
+                    
+                </PostActionBar>
             </View>
         </View>
     )
