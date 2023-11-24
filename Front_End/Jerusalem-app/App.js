@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import ChatScreen from './screens/chatScreen';
 import ChatList from './screens/chatList';
 import HomeScreen from './screens/HomeScreen'
+import ShopScreen from './screens/ShopScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -21,6 +22,7 @@ export default function App() {
           component={ChatScreen}
           options={{title: 'Welcome'}}
         />
+        <Stack.Screen name="ShopScreen" component={ShopScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

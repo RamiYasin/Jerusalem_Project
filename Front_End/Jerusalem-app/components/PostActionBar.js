@@ -4,8 +4,10 @@ import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
 
 export function PostActionBar() {
+    const navigation = useNavigation();
     return (
         <View style={styles.Nav}>
             <View style={styles.navItem}>
@@ -15,7 +17,7 @@ export function PostActionBar() {
             </View>
 
             <View style={styles.navItem}>
-                <Navsympl source={require('../assets/profile.png')} navStyle={styles.Navar}>
+                <Navsympl source={require('../assets/profile.png')} navStyle={styles.Navar} onPress={() => navigation.navigate('ShopScreen')}>
                 </Navsympl>
             </View>
 
