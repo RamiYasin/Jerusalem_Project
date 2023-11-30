@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, Button } from 'react-native';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import CusstomeButtone from '../components/CusstomeButtone';
+import NavBar from '../components/NavBar';
 
 // Mock data for the feed
 const mockData = [
@@ -38,17 +44,26 @@ const ShopScreen = () => {
     // Render each item in the feed
     const renderFeedItem = ({ item }) => (
         <View style={styles.feedItem}>
-            <Text style={styles.username}>{item.username}</Text>
-            <Image source={require('../assets/images.jpg')} style={styles.image} />
-            <View style={styles.feedFooter}>
-                <Text>Likes: {item.likes}</Text>
-                <Text>Comments: {item.comments}</Text>
+            <View style={styles.userinfos}>
+                <Image source={require('../assets/images.jpg')} style={styles.userfoto} />
+                <Text style={styles.userNamefoto}>{item.username}</Text>
+            </View>
+            <View style={styles.LikesFonts}>
+                <Text style={styles.userlikes}>Likes</Text>
+                <Text style={styles.userlikes}>{item.likes}</Text>
+            </View>
+            <View style={styles.ButtonContainer}>
+                <CusstomeButtone title="Unfollow"></CusstomeButtone>
+                <CusstomeButtone title="Report"></CusstomeButtone>
             </View>
         </View>
     );
 
     return (
         <View style={styles.container}>
+            <View>
+                <NavBar></NavBar>
+            </View>
             <FlatList
                 data={mockData}
                 keyExtractor={(item) => item.id}
@@ -59,6 +74,40 @@ const ShopScreen = () => {
 };
 
 const styles = StyleSheet.create({
+    CusstomeButton: {
+        borderRadius: 30,
+    },
+    userinfos: {
+        flexDirection: 'row',
+        justifyContent: 'flex start',
+        padding: 5,
+    },
+    ButtonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        padding: 30,
+    },
+    LikesFonts: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+
+    },
+    userNamefoto: {
+        marginLeft: 90,
+        backgroundColor: 'transparent',
+        fontFamily: 'sans-serif-medium',
+        fontSize: 20
+    },
+    userlikes: {
+        fontFamily: 'sans-serif-medium',
+        fontSize: 25
+    },
+    userfoto: {
+        height: hp('10%'),
+        width: wp('20%'),
+        borderRadius: 50,
+    },
     container: {
         flex: 1,
         backgroundColor: '#f9f9f9',
