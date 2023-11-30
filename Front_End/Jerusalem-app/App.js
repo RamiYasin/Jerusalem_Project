@@ -15,6 +15,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="ShopScreen" component={ShopScreen} />
       <Stack.Screen name="HomePage" component={HomeScreen} />
       <Stack.Screen name="Chatlist" component={ChatList} />
         <Stack.Screen
@@ -22,7 +23,6 @@ export default function App() {
           component={ChatScreen}
           options={{title: 'Welcome'}}
         />
-        <Stack.Screen name="ShopScreen" component={ShopScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -37,13 +37,13 @@ export default function NavBar() {
 }
 const styles = StyleSheet.create({
     Nav: {
-        marginTop: 5,
+        marginBottom: 20,
         flexDirection: 'row',
         justifyContent: 'space-around',
         width: wp('100%'),
         alignItems: 'flex-start',
         height: hp('7%'),
-        backgroundColor: '#ffffff',
+        backgroundColor: '#e6e6e6',
         borderRadius: 60/2,
     },
     navBut: {

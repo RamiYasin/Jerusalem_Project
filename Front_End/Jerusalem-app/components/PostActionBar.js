@@ -11,13 +11,13 @@ export function PostActionBar() {
     return (
         <View style={styles.Nav}>
             <View style={styles.navItem}>
-                <Navsympl source={require('../assets/chat2.png')} navStyle={styles.Navar}
+                <Navsympl source={require('../assets/herz_48.png')} navStyle={styles.Navar}
                 >
                 </Navsympl>
             </View>
 
             <View style={styles.navItem}>
-                <Navsympl source={require('../assets/profile.png')} navStyle={styles.Navar} onPress={() => navigation.navigate('ShopScreen')}>
+                <Navsympl source={require('../assets/dollar_48.png')} navStyle={styles.Navar} onPress={() => navigation.navigate('ShopScreen')}>
                 </Navsympl>
             </View>
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         width: wp('80%'),
         alignItems: 'flex-start',
         height: hp('7%'),
-        backgroundColor: 'rgba(52, 52, 52, 0.8)',
+        backgroundColor: 'rgb(242, 242, 242)',
         borderRadius: 60/2,
     },
     navBut: {

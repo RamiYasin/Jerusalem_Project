@@ -6,6 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 import CusstomeButtone from '../components/CusstomeButtone';
 import NavBar from '../components/NavBar';
+import { useNavigation } from '@react-navigation/native';
 
 // Mock data for the feed
 const mockData = [
@@ -41,6 +42,11 @@ const mockData = [
 ];
 
 const ShopScreen = () => {
+    const navigation = useNavigation();
+
+    const onViewPressed = () => {
+        navigation.navigate('HomePage')
+      }
     // Render each item in the feed
     const renderFeedItem = ({ item }) => (
         <View style={styles.feedItem}>
@@ -49,12 +55,12 @@ const ShopScreen = () => {
                 <Text style={styles.userNamefoto}>{item.username}</Text>
             </View>
             <View style={styles.LikesFonts}>
-                <Text style={styles.userlikes}>Likes</Text>
+                <Text style={styles.userlikes}>اعجابات</Text>
                 <Text style={styles.userlikes}>{item.likes}</Text>
             </View>
             <View style={styles.ButtonContainer}>
-                <CusstomeButtone title="Unfollow"></CusstomeButtone>
-                <CusstomeButtone title="Report"></CusstomeButtone>
+                <CusstomeButtone title="متابعة"></CusstomeButtone>
+                <CusstomeButtone title="مشاهدة"  onPress={onViewPressed}></CusstomeButtone>
             </View>
         </View>
     );
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
     },
     feedItem: {
-        backgroundColor: '#fff',
+        backgroundColor: '#e6e6e6',
         marginBottom: 20,
         borderRadius: 10,
         shadowColor: '#000',
